@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Jaiden's Internet Presentation</title>
+    <style>
+        body {
+            background: #5b979b;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .slide {
+            display: none;
+            padding: 50px;
+            animation: fade 0.8s ease-in-out;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #00eaff;
+            text-shadow: 0 0 15px #00eaff;
+        }
+
+        p {
+            font-size: 1.4em;
+            line-height: 1.6;
+        }
+
+        .button {
+            margin-top: 30px;
+            padding: 15px 35px;
+            background: #8aba81;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.3em;
+            cursor: pointer;
+            color: white;
+            box-shadow: 0 0 15px #90a37e;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 25px #7ca785, 0 0 40px #44b369;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div class="slide" style="display:block;">
+        <h1>What is the Internet?</h1>
+        <p>A <b>global network</b> connecting millions of devices </p>
+        <p>It lets us share information, talk, learn, play, shop — basically life would collapse without it 😭</p>
+
+
+        <br> <img src="what is intt=ernet.jpg" alt="" width="300"></p>
+
+        <button class="button" onclick="nextSlide()">Next Level if you like Jaiden :O</button>
+    </div>
+
+
+    <div class="slide">
+        <h1>History of the Internet</h1>
+        <p>1960s: ARPANET → the OG network </p>
+        <p>1980s: TCP/IP → the rules that keep the internet talking </p>
+        <p>1990s: WWW → boom! The internet becomes public </p>
+        <p>2000s+: WiFi, smartphones, TikTok addictions </p>
+
+
+        <br> <img src="History of the Internet.jpg" alt="" width="300"></p>
+
+        <button class="button" onclick="nextSlide()">Next Level if you like Jaiden :O</button>
+    </div>
+
+    >
+    <div class="slide">
+        <h1>Uses of the Internet</h1>
+        <p>Communication: video calls, messaging, memes</p>
+        <p>Education: online classes & research</p>
+        <p>Entertainment: streaming, gaming, scrolling for 4 hours straight</p>
+        <p>Business: online stores, marketing, money moves</p>
+
+
+        <br> <img src="Uses of the Internet.jpg" alt="" width="300"></p>
+
+        <button class="button" onclick="nextSlide()">Next Level :O</button>
+    </div>
+
+
+    <div class="slide">
+        <h1>Connecting Networks</h1>
+        <p>Repeater → Boosts signal</p>
+        <p>Bridge → Connects similar networks</p>
+        <p>Switch → Connects many devices</p>
+        <p>Router → Connects different networks → creates the Internet</p>
+
+        <img src="Connecting Networks.png" alt="" width="300"></p>
+
+        <button class="button" onclick="nextSlide()">Next Level :O</button>
+    </div>
+
+
+    <div class="slide">
+        <h1>Advantages</h1>
+        <p>Info anywhere, anytime</p>
+        <p>Fast communication</p>
+        <p>Global learning + business</p>
+
+        <img src="Advantages.jpg"" width=" 300"></p>
+
+        <button class="button" onclick="nextSlide()">Next Level →</button>
+    </div>
+
+
+    <div class="slide">
+        <h1>Disadvantages</h1>
+        <p>Privacy & security risks</p>
+        <p>Fake news & misinformation</p>
+        <p>Internet addiction (yes you scrolling at 3AM)</p>
+
+
+        <br> <img src="Disadvantages.jpg" alt="" width="300"></p>
+
+        <button class="button" onclick="nextSlide()">Last Slide</button>
+    </div>
+
+    <div class="slide">
+        <h1>Conclusion</h1>
+        <p>The internet changed school, business, communication — basically everything.</p>
+        <p>Future: <b>5G, AI, IoT</b></p>
+        <p>So yeah... the internet is kinda the main character of life.</p>
+
+
+        <br> <img src="Conclusion internet.jpg" alt="" width="300"></p>
+
+        <button class="button" onclick="restart()">Restart Presentation</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll(".slide");
+
+        function nextSlide() {
+            slides[currentSlide].style.display = "none";
+            currentSlide++;
+            slides[currentSlide].style.display = "block";
+        }
+
+        function restart() {
+            slides[currentSlide].style.display = "none";
+            currentSlide = 0;
+            slides[currentSlide].style.display = "block";
+        }
+    </script>
+
+</body>
+
+</html>

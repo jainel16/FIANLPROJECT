@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BMI Calculator - Gym Edition</title>
+</head>
+<body>
+    <center>
+        <h2>Healthy BMI Calculator</h2>
+
+        <input type="number" id="inc" placeholder="Enter your height in inches">
+        <br><br>
+        <input type="number" id="lb" placeholder="Enter your weight in pounds">
+        <br><br>
+        <button onclick="calculateBmi()">Calculate BMI</button>
+
+        <p>Result: <span id="result"></span></p>
+        <p>This means that you are: <span id="meaning"></span></p>
+
+        <p>Made by <span>Jaiden</span> ⚡</p>
+    </center>
+
+    <script>
+        function calculateBmi() {
+            let lb = parseFloat(document.getElementById('lb').value);
+            let resultElement = document.getElementById('result');
+            let meaningElement = document.getElementById('meaning');
+
+            if (!inc || !lb) {
+                resultElement.textContent = "";
+                meaningElement.textContent = "Please enter both height and weight!";
+                meaningElement.style.color = "red";
+                return;
+            }
+
+            let bmi = (lb * 703) / (inc * inc);
+            bmi = bmi.toFixed(1);
+            resultElement.textContent = bmi;
+
+            let meaning = "";
+            let color = "";
+
+            if (bmi < 18.5) {
+                meaning = "Underweight 😕";
+                color = "blue";
+            } else if (bmi >= 18.5 && bmi < 25) {
+                meaning = "Healthy 😊";
+                color = "green";
+            } else if (bmi >= 25 && bmi < 30) {
+                meaning = "Overweight 😐";
+                color = "orange";
+            } else {
+                meaning = "Obese 😟";
+                color = "red";
+            }
+
+            meaningElement.textContent = meaning;
+            meaningElement.style.color = color;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Project 2: AND Gate</title>
+  <style>
+ 
+    body {
+        background-color: #1e3a8a; /* blue */
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+
+    .navbar {
+        padding: 15px;
+        background-color: #1e40af; 
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        padding: 8px 12px;
+        background-color: #3b82f6;
+        border-radius: 6px;
+        font-size: 16px;
+    }
+
+    .nav-links a:hover {
+        background-color: #60a5fa;
+    }
+
+    .container {
+        background: white;
+        color: black;
+        padding: 25px;
+        margin: 30px auto;
+        width: 80%;
+        max-width: 700px;
+        border-radius: 10px;
+    }
+
+    h1 {
+        color: #1e3a8a;
+    }
+
+    .gate-container {
+        margin: 20px 0;
+    }
+
+    /* Buttons */
+    button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        color: white;
+    }
+
+    .on-button {
+        background-color: #22c55e;
+    }
+
+    .off-button {
+        background-color: #ef4444;
+    }
+
+    .run-button {
+        background-color: #3b82f6;
+        margin-top: 10px;
+    }
+
+    /* Active wires/output */
+    .active {
+        stroke: #3b82f6 !important;
+        stroke-width: 3px !important;
+    }
+
+    .active-text {
+        fill: #1e3a8a !important;
+        font-weight: bold;
+    }
+</style>
+
+       
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Project 2: AND Gate</h1>
+        
+        <div class="gate-container">
+            <svg class="gate-svg" viewBox="0 0 400 300">
+                
+                <path d="M 100 100 L 200 100 A 50 50 0 0 1 200 200 L 100 200 Z" 
+                      fill="none" stroke="#4CAF50" stroke-width="2"/>
+                
+                
+                <line id="input1-line" class="input-line" x1="50" y1="120" x2="100" y2="120" 
+                      stroke="#333" stroke-width="2"/>
+                <line id="input2-line" class="input-line" x1="50" y1="180" x2="100" y2="180" 
+                      stroke="#333" stroke-width="2"/>
+                
+
+                <line id="output-line" class="output-line" x1="250" y1="150" x2="350" y2="150" 
+                      stroke="#333" stroke-width="2"/>
+                
+
+                <text id="input1-text" x="30" y="125" font-size="20" fill="#333">0</text>
+                <text id="input2-text" x="30" y="185" font-size="20" fill="#333">0</text>
+                
+
+                <text id="output-text" x="360" y="155" font-size="20" fill="#333">0</text>
+                
+
+                <text x="150" y="155" font-size="18" fill="#333" text-anchor="middle">AND</text>
+            </svg>
+        </div>
+        
+        <div class="controls">
+            <div class="input-control">
+                <span class="input-label">Input A:</span>
+                <div class="button-group">
+                    <button class="on-button" onclick="setInputA(true)">ON</button>
+                    <button class="off-button" onclick="setInputA(false)">OFF</button>
+                </div>
+            </div>
+            
+            <div class="input-control">
+                <span class="input-label">Input B:</span>
+                <div class="button-group">
+                    <button class="on-button" onclick="setInputB(true)">ON</button>
+                    <button class="off-button" onclick="setInputB(false)">OFF</button>
+                </div>
+            </div>
+            
+            <button class="run-button" onclick="runSimulation()">RUN</button>
+        </div>
+<ul class="project-list">
+      <li><a href="Project2ANDGATE.html"></a></li>
+
+
+        
+       
+    
+    <script>
+        let inputA = false;
+        let inputB = false;
+        let hasRun = false;
+        
+        function setInputA(value) {
+            inputA = value;
+            hasRun = false;
+            updateDisplay();
+        }
+        
+        function setInputB(value) {
+            inputB = value;
+            hasRun = false;
+            updateDisplay();
+        }
+        
+        function runSimulation() {
+            hasRun = true;
+            updateDisplay();
+        }
+        
+        function updateDisplay() {
+            document.getElementById('input1-line').classList.remove('active');
+            document.getElementById('input2-line').classList.remove('active');
+            document.getElementById('output-line').classList.remove('active');
+            document.getElementById('input1-text').classList.remove('active-text');
+            document.getElementById('input2-text').classList.remove('active-text');
+            document.getElementById('output-text').classList.remove('active-text');
+            
+            if (inputA) {
+                document.getElementById('input1-text').textContent = '1';
+                document.getElementById('input1-line').classList.add('active');
+                document.getElementById('input1-text').classList.add('active-text');
+            } else {
+                document.getElementById('input1-text').textContent = '0';
+            }
+            
+
+            if (inputB) {
+                document.getElementById('input2-text').textContent = '1';
+                document.getElementById('input2-line').classList.add('active');
+                document.getElementById('input2-text').classList.add('active-text');
+            } else {
+                document.getElementById('input2-text').textContent = '0';
+            }
+            
+
+            if (hasRun) {
+                const output = inputA && inputB;
+                document.getElementById('output-text').textContent = output ? '1' : '0';
+                
+                if (inputA && inputB) {
+                    document.getElementById('output-line').classList.add('active');
+                    document.getElementById('output-text').classList.add('active-text');
+                }
+            } else {
+                document.getElementById('output-text').textContent = '0';
+            }
+        }
+        
+        function goBack() {
+            inputA = false;
+            inputB = false;
+            hasRun = false;
+            updateDisplay();
+        }
+        
+
+        updateDisplay();
+    </script>
+</body>
+</html> 
+
+  </footer>
+</body>
+</html>

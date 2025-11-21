@@ -1,0 +1,126 @@
+body {
+  background-color: lightblue;
+  margin: 3px;
+
+  min-height: 100vh;     
+  display: flex;          
+  flex-direction: column; 
+}
+ .navbar ul {
+
+color:azure;
+padding : 30px;
+margin: 0px;
+overflow: hidden;
+justify-content: center;
+display: flex;
+
+ }
+ .navbar li { 
+  list-style-type: none;
+  margin: 0 30px;
+ }
+  .navbar a{
+ color: navy;
+ padding: 15px;
+ display: block;
+ text-decoration: none;
+ text-align: center;
+ }
+.img-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center;    
+  height: 300px;         
+}
+.imge-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center;    
+  height: 200px;      
+  width:  100x;   
+}
+
+ 
+ .navbar a:hover {
+  color: navy; 
+  text-shadow: 
+    0 0 5px rgb(89, 7, 230),   
+    0 0 10px rgba(4, 4, 148, 0.329),  
+    0 0 20px rgba(133, 7, 243, 0.5),  
+    0 0 40px rgba(156, 7, 255, 0.377);  
+  transition: all 0.3s ease; 
+}
+ 
+h1 {
+  color: navy;
+  text-align: center; 
+}
+
+.shortpg {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+   bottom: 80px;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background: navy;
+  color: white;
+  margin-top: auto;   
+  width: 100%;
+}
+
+.clickable-image {
+  width: 50%;        
+  max-width: 600px; 
+  height: auto;   
+  display: block;
+  margin: 20px auto; 
+}
+
+
+
+.shortpg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;       
+  padding: 20px;   
+  margin-top: -30px; 
+}
+
+.about-img {
+  width: 200px;     
+  height: auto;
+  border-radius: 10px;
+}
+.imge-container {
+  display: flex;
+  margin-top: 40px;        
+}
+
+.clickable-image {
+  max-width: 40%;   
+  height: auto;     
+  border-radius: 8px; 
+}
+.view-code-btn {
+  margin-top: 10px;
+  padding: 12px 25px;
+  background: #1cafaf;
+  color: white;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.view-code-btn:hover {
+  background: #0099cc;
+  transform: scale(1.05);
+}
+

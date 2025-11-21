@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Data Types Game</title>
+<style>
+    body {
+        background: lightblue;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 20px;
+    }
+
+    h1 {
+        color: navy;
+    }
+
+    .btn {
+        background: navy;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        margin: 10px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        background: #0044aa;
+    }
+
+    .box {
+        background: white;
+        width: 70%;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        display: none;
+        font-size: 18px;
+    }
+
+    .img-box img {
+        width: 50%;
+        max-width: 300px;
+        border-radius: 10px;
+    }
+
+    .example-box {
+        display: none;
+        background: white;
+        width: 70%;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        font-size: 18px;
+    }
+</style>
+</head>
+
+<body>
+
+<h1> Data Types Mini Game</h1>
+<p>Click a button to reveal the meaning!</p>
+
+<button class="btn" onclick="showBox('udt')">User-Defined Data Types</button>
+<button class="btn" onclick="showBox('adt')">Abstract Data Types</button>
+
+<!-- USER-DEFINED DATA TYPES -->
+<div id="udt" class="box">
+    <b>User-Defined Data Types (UDTs)</b><br><br>
+    Programmers create these themselves using built-in types.<br><br>
+
+     Groups related data  
+     Easy to reuse  
+    Makes programs easier to read  
+
+    <br><br><b>Examples:</b> structs, classes, enums.<br><br>
+
+    <div class="img-box">
+        <img src="datameaning.png" alt="UDT Example Image">
+    </div>
+
+    <button class="btn" onclick="showExamples('udt-ex')">NEXT ➡</button>
+</div>
+
+<!-- UDT EXAMPLES PAGE -->
+<div id="udt-ex" class="example-box">
+    <h2></h2> User-Defined Data  Examples</h2>
+     struct Person { name, age }<br>
+     class Car { speed, color }<br>
+     enum Days { Monday–Sunday }<br><br>
+
+    <img src="DatatypesInC.png" width="50%">
+
+    <br><br>
+    <button class="btn" onclick="goBack()"> BACK</button>
+</div>
+
+
+
+<!-- ABSTRACT DATA TYPES -->
+<div id="adt" class="box">
+    <b>Abstract Data Types (ADTs)</b><br><br>
+    ADTs describe *what* a data type can do—not how it is built.<br><br>
+
+    ✔ Focus on behavior  
+    ✔ Used in algorithms  
+    ✔ Helps organize code  
+
+    <br><br><b>Examples:</b> Stack, Queue, Linked List, Map.<br><br>
+
+    <div class="img-box">
+        <img src="AbstractDatameaning.png" alt="ADT Example Image">
+    </div>
+
+    <button class="btn" onclick="showExamples('adt-ex')">NEXT ➡</button>
+</div>
+
+<!-- ADT EXAMPLES PAGE -->
+<div id="adt-ex" class="example-box">
+    <h2>Abstract Data Types  Examples</h2>
+     Stack → LIFO (Last In First Out)<br>
+     Queue → FIFO (First In First Out)<br>
+     Linked List → nodes connected together<br>
+     Map → key-value pairs<br><br>
+
+    <img src="AbstractDat exam.png" width="50%">
+
+    <br><br>
+    <button class="btn" onclick="goBack()"> BACK</button>
+</div>
+
+<script>
+function showBox(id) {
+    hideAll();
+    document.getElementById(id).style.display = "block";
+}
+
+function showExamples(id) {
+    hideAll();
+    document.getElementById(id).style.display = "block";
+}
+
+function goBack() {
+    hideAll();
+}
+
+function hideAll() {
+    document.getElementById("udt").style.display = "none";
+    document.getElementById("adt").style.display = "none";
+    document.getElementById("udt-ex").style.display = "none";
+    document.getElementById("adt-ex").style.display = "none";
+}
+</script>
+
+</body>
+</html>
